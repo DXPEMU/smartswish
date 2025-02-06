@@ -4,6 +4,8 @@
 
 <h2>Description</h2>
 This project was a personal project in which I built a website with full integration of NBA APIs, allowing users to get up to date and specific information about NBA games and players. I also developed and trained an AI machine learning model which allowed users to upload NBA clips and receive back highlights.
+
+I am unable to put my full weights here because of the size, but the way that they were used is denoted
 <br />
 
 
