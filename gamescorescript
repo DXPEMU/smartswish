@@ -1,0 +1,61 @@
+document.addEventListener("DOMContentLoaded", function() {
+  const apiUrl = "https://api.balldontlie.io/v1/games";
+  const apiKey = "a12c306b-52a1-40e8-bb42-24ed90734cd8";
+  const currentDate = new Date().toISOString().split('T')[0]; // Gets the current date in YYYY-MM-DD format
+ 
+  const dateControl = document.querySelector('input[type="date"]');
+
+  // Function to fetch data based on user input date
+  function fetchData() {
+    fetch(`${apiUrl}?start_date=${dateControl.value}&end_date=${dateControl.value}`, {
+        headers: {
+            'Authorization': apiKey
+        }
+    })
+    .then(response => response.json())
+    .then(data => displayGames(data.data))
+    .catch(error => console.error("Error fetching data:", error));
+  }
+
+  // Add event listener to the date input to trigger fetch when the date changes
+  dateControl.addEventListener('change', fetchData);
+
+  // Initial fetch with current date when the page loads
+  fetchData();
+
+  function displayGames(games) {
+      const gamesContainer = document.getElementById("game-list");
+      
+      // Check if the gamesContainer exists
+      if (!gamesContainer) {
+          console.error("Element with ID 'game-list' not found");
+          return;
+      }
+
+      gamesContainer.innerHTML = ""; // Clear any existing content
+
+      if (games.length === 0) {
+          gamesContainer.innerHTML = "<p>No games available.</p>";
+          return;
+      }
+
+      games.forEach(game => {
+          const gameElement = document.createElement("div");
+          gameElement.className = "game";
+          gameElement.innerHTML = `
+              <h2>${game.home_team.full_name} vs ${game.visitor_team.full_name}</h2>
+              <div class="score">
+                  ${game.home_team_score} - ${game.visitor_team_score}
+              </div>
+              <div class="status">${formatStatus(game.status, game.period, game.time)}</div>
+          `;
+          gamesContainer.appendChild(gameElement);
+      });
+  }
+
+  function formatStatus(status, period, time) {
+      if (status === "Final") return "Final";
+      if (period === 0) return status; // Game not started, showing start time
+      return `${status} - ${time}`;
+  }
+});
