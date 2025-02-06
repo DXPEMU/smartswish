@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   const apiUrl = "https://api.balldontlie.io/v1/games";
-  const apiKey = "a12c306b-52a1-40e8-bb42-24ed90734cd8";
+  const apiKey = //Generate your own API Key
   const currentDate = new Date().toISOString().split('T')[0]; // Gets the current date in YYYY-MM-DD format
  
   const dateControl = document.querySelector('input[type="date"]');
