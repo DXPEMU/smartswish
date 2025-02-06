@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- External CSS and fonts -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet"> <!-- Added Bitter font -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <title>NBA Game Scores</title>
+</head>
+<body>
+    <h1 style="font-family: 'Bitter', serif; text-transform: uppercase;">Game Scores</h1> <!-- Bitter font and text uppercase -->
+
+    <header>
+        <div class="w3-top">
+            <div class="w3-bar w3-white w3-card" id="myNavbar">
+                <a href="{{ url_for('index') }}" class="w3-bar-item w3-button">Home</a>
+                <a href="{{ url_for('game_scores') }}" class="w3-bar-item w3-button">Game Scores</a>
+                <a href="{{ url_for('game_stats') }}" class="w3-bar-item w3-button"> Stat Leaders</a>
+                <a href="{{ url_for('player_profiles') }}" class="w3-bar-item w3-button">Player Profiles</a>
+                <a href="{{ url_for('team_profiles') }}" class="w3-bar-item w3-button">Team Profiles</a>
+                <a href="{{ url_for('league_standings') }}" class="w3-bar-item w3-button">League Standings</a>
+                <a href="{{ url_for('upload_video') }}" class="w3-bar-item w3-button">Upload</a>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="script-container" style="margin-top: 70px;"> <!-- Ensures that the script is below the navbar -->
+            <label>
+                Select a date:
+            </label><input type="date" value="" />
+            <div id="game-list"></div>
+
+            
+            <script src="{{ url_for('static', filename='js/gamescorescript.js') }}"></script>
+        </div>
+    </main>
+</body>
+</html>
