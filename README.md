@@ -3,7 +3,7 @@
  ### [YouTube Demonstration](https://youtu.be/46mltkICIRE)
 
 <h2>Description</h2>
-With the automation of the video summarisation process, SmartSwish hopes to provide an easier and more entertaining method to watch NBA games. This project explores the many facets of artificial intelligence (AI) in sports video analysis, the significance of video analysis in sports, and the features and expected advantages of the SmartSwish system.
+This project was a personal project in which I built a website with full integration of NBA APIs, allowing users to get up to date and specific information about NBA games and players. I also developed and trained an AI machine learning model which allowed users to upload NBA clips and receive back highlights.
 <br />
 
 
