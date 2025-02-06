@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- External CSS and fonts -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <title>Home - SmartSwish</title>
+</head>
+<body>
+    <header>
+        <div class="script-container" style="margin-top: 50px;"></div>
+        
+        <div class="w3-top">
+            <div class="w3-bar w3-white w3-card" id="myNavbar">
+                <a href="{{ url_for('index') }}" class="w3-bar-item w3-button">Home</a>
+                <a href="{{ url_for('game_scores') }}" class="w3-bar-item w3-button">Game Scores</a>
+                <a href="{{ url_for('game_stats') }}" class="w3-bar-item w3-button">Stat Leaders</a>
+                <a href="{{ url_for('player_profiles') }}" class="w3-bar-item w3-button">Player Profiles</a>
+                <a href="{{ url_for('team_profiles') }}" class="w3-bar-item w3-button">Team Profiles</a>
+                <a href="{{ url_for('league_standings') }}" class="w3-bar-item w3-button">League Standings</a>
+                <a href="{{ url_for('upload_video') }}" class="w3-bar-item w3-button">Upload</a>
+            </div>
+        </div>
+       
+    </header>
+    
+    <main>
+        <div class="script-container" style="margin-top: 70px;"></div>
+        <h1>SMARTSWISH WEB</h1>
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <!-- Text within a card-styled box -->
+                    <h2>Welcome!</h2>
+                    <p>Welcome to SmartSwish, your ultimate destination for everything NBA! 🏀
+
+                        Unlock the power of instant assimilation with SmartSwish, your AI companion in the world of basketball. Dive into the heart of the action with lightning-fast access to NBA highlights, current game scores, team profiles, all-time player stats, and game statistics—all in one convenient hub.
+                        
+                        Whether you're a die-hard fan or a casual observer, SmartSwish caters to your every NBA need, providing a seamless experience for exploring the electrifying world of professional basketball. Join us on this thrilling journey through the hoops universe, where every dunk, three-pointer, and buzzer-beater awaits your discovery.
+                        
+                        Get ready to elevate your NBA experience with SmartSwish. Let's make every moment on the court count! 🌟
+                    </p>
+                    <p>To see the game scores from this NBA season, Click Game Scores.</p>
+                    <p>To see the stats for games on any given day, go to Game Stats.</p>
+                    <p>To check all-time NBA Player profile cards, go to Player Profiles.</p>
+                    <p>To see information about each NBA team in the league, click League Profiles.</p>
+                    <p>To see the standings of the league and playoffs, click League Standings.</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <!-- Using Flask's url_for to point to the logo in the static folder -->
+                <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="SmartSwish Logo">
+            </div>
+            <div class="landscape-text">
+                <h3>&copy; DXPEMU. </h3>
+                <p>MMXXIV</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
